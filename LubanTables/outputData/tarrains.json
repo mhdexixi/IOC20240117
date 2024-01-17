@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "height": 0.1,
+    "tiles": "wetland",
+    "desc": "湿地"
+  },
+  {
+    "id": 2,
+    "height": 0.3,
+    "tiles": "flatland",
+    "desc": "平原"
+  },
+  {
+    "id": 3,
+    "height": 0.7,
+    "tiles": "highland",
+    "desc": "高原"
+  },
+  {
+    "id": 4,
+    "height": 1,
+    "tiles": "snowland",
+    "desc": "雪原"
+  }
+]
