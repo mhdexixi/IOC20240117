@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/WelcomeScene.uss?fileID=7433441132597879392&amp;guid=2f9dc838ffd689740b22261649a09087&amp;type=3#WelcomeScene0111" />
+    <ui:VisualElement class="main">
+        <ui:VisualElement class="titles" />
+        <ui:Button class="button" name="start" text="开始游戏" />
+        <ui:VisualElement class="img" />
+        <ui:Button class="button" name="load" text="读取存档"/>
+        <ui:VisualElement class="img" />
+        <ui:Button class="button" name="options" text="游戏选项"/>
+        <ui:VisualElement class="img" />
+        <ui:Button class="button" name="quit" text="退出游戏"/>
+        <ui:VisualElement class="img" />
+    </ui:VisualElement>
+</ui:UXML>
