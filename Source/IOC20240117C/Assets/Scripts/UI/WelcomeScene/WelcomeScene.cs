@@ -22,7 +22,7 @@ public class WelcomeScene : MonoBehaviour
 
     private void OnStartButtonClicked(MouseUpEvent evt)
     {
-        SceneManager.LoadScene("TempScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("LoadScene", LoadSceneMode.Single);
     }
 
     private void OnOptionsButtonClicked(MouseUpEvent evt)
