@@ -12,9 +12,10 @@ public class MB_StartGame : MonoBehaviour
     {
         //赋值出生坐标
         birthChunkPos = Config.Instance.RandomBirthChunkPos();
-        birthWorldPos = new Vector3Int(birthChunkPos.x * 32, birthChunkPos.y * 32);
         //初始化出生地图
-        InitBirthMap();
+        InitBirthMap(birthChunkPos);
+        //初始化九宫格出生地图
+        InitBirthMap8(birthChunkPos);
         //初始化角色
         InitCharacter();
     }
@@ -31,8 +32,9 @@ public class MB_StartGame : MonoBehaviour
 
     #region 初始化出生地图
     
-    void InitBirthMap()
+    void InitBirthMap(Vector3Int birthChunkPos)
     {
+        birthWorldPos = new Vector3Int(birthChunkPos.x * 32, birthChunkPos.y * 32);
         //新建tilemap
         GameObject objTilemap = new GameObject("tilemap(" + birthChunkPos.x + "," + birthChunkPos.y + ")");
         objTilemap.AddComponent<Tilemap>();
@@ -70,6 +72,18 @@ public class MB_StartGame : MonoBehaviour
             return tiles[0];
         }
     }
+
+    void InitBirthMap8(Vector3Int birthChunkPos)
+    {
+        InitBirthMap(new Vector3Int(birthChunkPos.x-1,birthChunkPos.y+1));
+        InitBirthMap(new Vector3Int(birthChunkPos.x,birthChunkPos.y+1));
+        InitBirthMap(new Vector3Int(birthChunkPos.x+1,birthChunkPos.y+1));
+        InitBirthMap(new Vector3Int(birthChunkPos.x+1,birthChunkPos.y));
+        InitBirthMap(new Vector3Int(birthChunkPos.x+1,birthChunkPos.y-1));
+        InitBirthMap(new Vector3Int(birthChunkPos.x,birthChunkPos.y-1));
+        InitBirthMap(new Vector3Int(birthChunkPos.x-1,birthChunkPos.y-1));
+        InitBirthMap(new Vector3Int(birthChunkPos.x-1,birthChunkPos.y));
+    }
     
     #endregion
 
@@ -77,6 +91,7 @@ public class MB_StartGame : MonoBehaviour
 
     void InitCharacter()
     {
+        birthWorldPos = new Vector3Int(birthChunkPos.x * 32, birthChunkPos.y * 32);
         GameObject.Find("Character").transform.position = birthWorldPos;
     }
 
